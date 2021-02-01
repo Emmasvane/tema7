@@ -16,19 +16,25 @@
 
     <script>
         tal = Math.round(Math.random() * 20);
+        klik = 0;
+        let resultat;
 
         document.querySelector("button").addEventListener("click", buttonClicked);
+        document.querySelector("klik");
 
         function buttonClicked() {
             let guess = document.querySelector("#guess").value;
-            console.log(tal);
+
             if (isNaN(tal)) {
                 resultat = "Dette er ikke et tal. Prøv igen.";
             } else if (guess > tal) {
                 resultat = "Du ramte desværre for højt";
-            } else(guess < tal) {
+            } else if (guess < tal) {
+                resultat = "Du ramte desværre for lavt";
+            } else {
                 resultat = "TILLYKKE! Du ramte plet!";
             }
+            console.log(resultat);
         }
 
     </script>
