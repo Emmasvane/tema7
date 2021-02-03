@@ -13,28 +13,25 @@
     <input type="text" id="guess">
 
     <button>Se om du har ramt rigtigt!</button>
+    <button id="nyt_spil">Nyt spil</button>
 
     <script>
-        tal = Math.round(Math.random() * 20);
-        klik = 0;
-        let resultat;
+        const tilfaeldigtTal = Math.round(Math.random() * 20);
+        let antalGæt = 0;
 
-        document.querySelector("button").addEventListener("click", buttonClicked);
-        document.querySelector("klik");
+        document.querySelector("button").addEventListener("click", guessTal);
 
-        function buttonClicked() {
-            let guess = document.querySelector("#guess").value;
-
-            if (isNaN(tal)) {
-                resultat = "Dette er ikke et tal. Prøv igen.";
-            } else if (guess > tal) {
-                resultat = "Du ramte desværre for højt";
-            } else if (guess < tal) {
-                resultat = "Du ramte desværre for lavt";
+        function guessTal() {
+            antalGæt++;
+            const guess = document.querySelector("#gæt").value;
+            console.log("brugergæt", guess);
+            if (guess == tilfaeldigtTal) {
+                console.log(`RIGTIGT: du har gættet ${antalGæt} gange`);
+            } else if (guess > tilfaeldigtTal) {
+                console.log(`For lavt: du har gættet ${antalGæt} gange`);
             } else {
-                resultat = "TILLYKKE! Du ramte plet!";
+                console.log(`For højt: du har gættet ${antalGæt} gange`);
             }
-            console.log(resultat);
         }
 
     </script>
