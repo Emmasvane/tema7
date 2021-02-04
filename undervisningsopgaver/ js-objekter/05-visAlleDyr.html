@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-visAlleDyr</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section id="liste"></section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let dyr = [{
+            "navn": "frø",
+            "type": "amfibie",
+            "levested": "Fra søen"
+        }, {
+            "navn": "gris",
+            "type": "pattedyr",
+            "levested": "Fra svinefarm"
+        }, {
+            "navn": "ræv",
+            "type": "pattedyr",
+            "levested": "Fra skoven"
+        }, {
+            "navn": "sild",
+            "type": "fisk",
+            "levested": "Fra vandet"
+        }, {
+            "navn": "krokodille",
+            "type": "krybdyr",
+            "levested": "Fra Amazonen"
+        }];
+
+        function start() {
+            console.log(dyr);
+            const listevisnig = document.querySelector("#liste");
+            dyr.forEach(dyr => {
+                listevisnig.innerHTML += `<p>${dyr.navn} ${dyr.type} ${dyr.levested}</p>`
+            })
+        }
+
+    </script>
+</body>
+
+</html>
