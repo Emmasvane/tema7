@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-visMedTemplate</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <section class="data-container"></section>
+    <template>
+        <article class="liste">
+            <h3></h3>
+            <img src="" alt="">
+            <p class="type"></p>
+            <p class="sted"></p>
+        </article>
+    </template>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        let dyr = [{
+            "navn": "frø",
+            "type": "amfibie",
+            "levested": "Fra søen",
+            "billede": "http://mabe-kea.dk/E19/pics/frog.png"
+        }, {
+            "navn": "gris",
+            "type": "pattedyr",
+            "levested": "Fra svinefarm",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png"
+        }, {
+            "navn": "ræv",
+            "type": "pattedyr",
+            "levested": "Fra skoven",
+            "billede": "http://mabe-kea.dk/E19/pics/fox.png"
+        }, {
+            "navn": "sild",
+            "type": "fisk",
+            "levested": "Fra vandet",
+            "billede": "http://mabe-kea.dk/E19/pics/sild.jpg"
+        }, {
+            "navn": "krokodille",
+            "type": "krybdyr",
+            "levested": "Fra Amazonen",
+            "billede": "http://mabe-kea.dk/E19/pics/kroko.jpg"
+        }];
+
+        function start() {
+
+            const container = document.querySelector(".data-container");
+            const dyrTemplate = document.querySelector("template");
+            dyr.forEach(dyrene => {
+                //placer dyr i html
+                let klon = dyrTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = dyrene.navn;
+                klon.querySelector("img").src = dyrene.billede;
+                klon.querySelector(".type").textContent = dyrene.type;
+                klon.querySelector(".sted").textContent = dyrene.levested;
+                container.appendChild(klon);
+            })
+
+        }
+
+    </script>
+</body>
+
+</html>
