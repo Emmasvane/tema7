@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-visDyr</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <article id=dyr>
+        <p></p>
+        <img src="" alt="">
+    </article>
+
+    <script>
+        const etDyr = {
+            "navn": "gris",
+            "type": "pattedyr",
+            "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+            "levested": "svinefarme"
+        }
+        const destination = document.querySelector("#dyr");
+        const heltDyr = `navn: ${etDyr.navn} type: ${etDyr.type} levested: ${etDyr.levested}`;
+        destination.querySelector("p").textContent = heltDyr;
+        destination.querySelector("img").src = etDyr.billede;
+
+    </script>
+</body>
+
+</html>
