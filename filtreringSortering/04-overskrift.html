@@ -41,7 +41,10 @@
 </head>
 
 <body>
-    <h1>Alle</h1>
+    <header>
+        <h1>Alle</h1>
+    </header>
+
     <nav>
         <button data-troende="alle" class="valgt">Alle</button>
         <button data-troende="ja">Troende</button>
@@ -84,6 +87,8 @@
             filter = this.dataset.troende;
 
             visPersoner();
+            header.textContent = this.textContent;
+
         }
         async function loadJSON() {
             const JSONData = await fetch("https://persongalleri-5d3e.restdb.io/rest/persongalleri", {
