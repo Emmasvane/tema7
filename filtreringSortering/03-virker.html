@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02-knapper</title>
+    <title>03-virker</title>
 
     <style>
         body {
@@ -42,10 +42,10 @@
 
 <body>
     <nav>
-        <button data-troende="alle">Alle</button>
-        <button data-troende="ja" class="valgt">Troende</button>
-        <button data-tronede="nej">Ikke troende</button>
-        <button data-tronede="tvivler">Tvivler</button>
+        <button data-troende="alle" class="valgt">Alle</button>
+        <button data-troende="ja">Troende</button>
+        <button data-troende="nej">Ikke troende</button>
+        <button data-troende="tvivler">Tvivler</button>
 
     </nav>
 
@@ -55,6 +55,7 @@
         <article class="person">
             <h2 class="navn"></h2>
             <p class="køn"></p>
+            <p class="troende">Troende: </p>
             <img src="" alt="" class="profil-billede">
         </article>
     </template>
@@ -69,15 +70,20 @@
         }
         document.addEventListener("DOMContentLoaded", start)
         let personer;
-
-        let filter = "ja";
+        let filter = "alle";
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
-
+            const filterknapper = document.querySelectorAll("nav button");
+            filterknapper.forEach(knap => knap.addEventListener("click", filtrerPersoner));
             loadJSON();
         }
 
+        function filtrerPersoner() {
+            filter = this.dataset.troende;
+
+            visPersoner();
+        }
         async function loadJSON() {
             const JSONData = await fetch("https://persongalleri-5d3e.restdb.io/rest/persongalleri", {
                 headers: myHeaders
@@ -92,14 +98,17 @@
 
             const dest = document.querySelector("#liste"); // container til articles med en person
             const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-
+            dest.textContent = "";
             personer.forEach(person => {
-
+                console.log("Troende", person.troende);
                 // loop igennem json (personer)
-                if (filter == person.troende) {
+                //tjek hvilkem tro personen har og sammenlign med aktuelt filter eller vis alle filter der har værdien "alle"
+                if (filter == person.troende || filter == "alle") {
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
                     klon.querySelector(".profil-billede").src = medieurl + person.billede;
+                    klon.querySelector(".troende").textContent += person.troende;
+
                     dest.appendChild(klon);
                 }
             })
