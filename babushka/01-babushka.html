@@ -31,10 +31,18 @@
         margin: 0em 6em;
     }
 
+    #toppen {
+        background-color: #D98C5F;
+        padding: 1vw;
+    }
+
     .retter {
         padding: 0.5em;
         border-radius: 10px;
-        border: 2px solid #59190B;
+        border: 2px;
+        background: rgba(217, 140, 95, 0.13);
+        margin-bottom: 0.5vw;
+        margin-left: 0.5vw;
     }
 
     h1 {
@@ -47,16 +55,15 @@
         margin-left: 12vw;
     }
 
-    header img {
+    #toppen img {
         position: absolute;
         height: 14vw;
-        margin-top: 0vw;
+        margin-top: 3vw;
         margin-left: -44vw;
         width: 100%;
     }
 
     nav {
-        margin-top: 5vw;
         margin-left: 10vw;
     }
 
@@ -82,7 +89,7 @@
 
     h2 {
         font-family: 'Roboto', sans-serif;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 400;
         margin-left: 6vw;
         color: 59190B;
@@ -98,10 +105,10 @@
     }
 
     @media screen and (min-width: 600px) {
-        header img {
+        #toppen img {
             position: absolute;
             height: 14vw;
-            margin-top: -2vw;
+            margin-top: 0.5vw;
             margin-left: -44vw;
             width: 100%;
         }
@@ -112,14 +119,29 @@
             padding: 12px 23px;
             font-size: 19px;
         }
+        h2 {
+            font-size: 30px;
+        }
+        .retter:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    @media screen and (max-width: 780px) {
+        #toppen img {
+            margin-top: 4vw;
+        }
     }
 
 </style>
 
 <body>
-    <header>
+    <section id=toppen>
         <img src="babushka.svg" alt="babushka">
         <h1>Bistro Babushka</h1>
+    </section>
+    <header>
+
         <nav>
             <button data-bistro="alle" class="valgt">Alle</button>
             <button data-bistro="forretter">Forretter</button>

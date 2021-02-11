@@ -22,6 +22,11 @@
         margin-right: auto;
     }
 
+    #toppen {
+        background-color: #D98C5F;
+        padding: 1vw;
+    }
+
     img {
         max-width: 50%;
     }
@@ -36,16 +41,16 @@
         margin-left: 12vw;
     }
 
-    header img {
+    #toppen img {
         position: absolute;
         height: 14vw;
-        margin-top: 0vw;
-        margin-left: -20vw;
+        margin-top: 1vw;
+        margin-left: -19vw;
         width: 100%;
     }
 
     article p {
-        text-align: center;
+        text-align: left;
         margin-bottom: 5vw;
         margin-top: 5vw;
         margin-right: 10vw;
@@ -78,10 +83,10 @@
     }
 
     @media screen and (min-width: 600px) {
-        header img {
+        #toppen img {
             position: absolute;
             height: 14vw;
-            margin-top: -2vw;
+            margin-top: 0.5vw;
             margin-left: -34vw;
             width: 100%;
         }
@@ -117,12 +122,20 @@
         }
     }
 
+    @media screen and (max-width: 780px) {
+        #toppen img {
+            margin-top: 4vw;
+        }
+    }
+
 </style>
 
 <body>
     <header>
-        <img src="babushka.svg" alt="babushka">
-        <h1>Bistro Babushka</h1>
+        <section id=toppen>
+            <img src="babushka.svg" alt="babushka">
+            <h1>Bistro Babushka</h1>
+        </section>
     </header>
     <button>Tilbage</button>
     <article class="ret">
