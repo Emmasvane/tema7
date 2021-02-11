@@ -10,132 +10,134 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <title>Babushka</title>
 </head>
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        background: #F2E2C4;
-    }
 
-    img {
-        width: 100%;
-    }
+<body>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #F2E2C4;
+        }
 
-    article:hover img {
-        opacity: 0.7;
-    }
+        img {
+            width: 100%;
+        }
 
-    #liste {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap: 1em;
-        margin: 0em 6em;
-    }
+        article:hover img {
+            opacity: 0.7;
+        }
 
-    #toppen {
-        background-color: #D98C5F;
-        padding: 1vw;
-    }
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 1em;
+            margin: 0em 6em;
+        }
 
-    .retter {
-        padding: 0.5em;
-        border-radius: 10px;
-        border: 2px;
-        background: rgba(217, 140, 95, 0.13);
-        margin-bottom: 0.5vw;
-        margin-left: 0.5vw;
-    }
+        #toppen {
+            background-color: #D98C5F;
+            padding: 1vw;
+        }
 
-    h1 {
-        font-family: Bebas Neue, bold;
-        font-weight: 400;
-        font-size: 2em;
-        color: #59190B;
-        border-bottom: 7px solid #59190B;
-        margin-top: 5vw;
-        margin-left: 12vw;
-    }
+        .retter {
+            padding: 0.5em;
+            border-radius: 10px;
+            border: 2px;
+            background: rgba(217, 140, 95, 0.13);
+            margin-bottom: 0.5vw;
+            margin-left: 0.5vw;
+        }
 
-    #toppen img {
-        position: absolute;
-        height: 14vw;
-        margin-top: 3vw;
-        margin-left: -44vw;
-        width: 100%;
-    }
+        h1 {
+            font-family: Bebas Neue, bold;
+            font-weight: 400;
+            font-size: 2em;
+            color: #59190B;
+            border-bottom: 7px solid #59190B;
+            margin-top: 5vw;
+            margin-left: 12vw;
+        }
 
-    nav {
-        margin-left: 10vw;
-    }
-
-    button {
-        background: #F2E2C4;
-        font-family: 'Roboto', sans-serif;
-        color: black;
-        font-weight: 400;
-        border: none;
-        padding: 10px 13px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 14px;
-        margin: 4px 2px;
-    }
-
-    button:hover {
-        background: #F2E2C4;
-        border-bottom: 2px solid #59190B;
-        color: #59190B;
-    }
-
-    h2 {
-        font-family: 'Roboto', sans-serif;
-        font-size: 20px;
-        font-weight: 400;
-        margin-left: 6vw;
-        color: 59190B;
-    }
-
-    footer {
-        font-family: 'Roboto', sans-serif;
-        text-align: center;
-        padding: 3px;
-        background-color: #D98C5F;
-        color: #59190B;
-        margin-top: 3vw;
-    }
-
-    @media screen and (min-width: 600px) {
         #toppen img {
             position: absolute;
             height: 14vw;
-            margin-top: 0.5vw;
+            margin-top: 3vw;
             margin-left: -44vw;
             width: 100%;
         }
-        h1 {
-            font-size: 4em;
+
+        nav {
+            margin-left: 10vw;
         }
+
         button {
-            padding: 12px 23px;
-            font-size: 19px;
+            background: #F2E2C4;
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            font-weight: 400;
+            border: none;
+            padding: 10px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
         }
+
+        button:hover {
+            background: #F2E2C4;
+            border-bottom: 2px solid #59190B;
+            color: #59190B;
+        }
+
         h2 {
-            font-size: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            margin-left: 6vw;
+            color: 59190B;
         }
-        .retter:hover {
-            transform: scale(1.1);
+
+        footer {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            padding: 3px;
+            background-color: #D98C5F;
+            color: #59190B;
+            margin-top: 3vw;
         }
-    }
 
-    @media screen and (max-width: 780px) {
-        #toppen img {
-            margin-top: 4vw;
+        @media screen and (min-width: 600px) {
+            #toppen img {
+                position: absolute;
+                height: 14vw;
+                margin-top: 0.5vw;
+                margin-left: -44vw;
+                width: 100%;
+            }
+            h1 {
+                font-size: 4em;
+            }
+            button {
+                padding: 12px 23px;
+                font-size: 19px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+            .retter:hover {
+                transform: scale(1.1);
+            }
         }
-    }
 
-</style>
+        @media screen and (max-width: 780px) {
+            #toppen img {
+                margin-top: 4vw;
+            }
+        }
 
-<body>
+    </style>
+
+
     <section id=toppen>
         <img src="babushka.svg" alt="babushka">
         <h1>Bistro Babushka</h1>
